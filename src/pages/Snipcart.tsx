@@ -121,10 +121,10 @@ export default()=>{
 
                                 <div className="d-flex justify-content-between align-items-center">
                                     <div className="btn-group">
-                                    <button className="snipcart-add-item btn btn-sm btn-outline-danger"
+                                    <button className="snipcart-add-item"
                                      data-item-id={value.id}
                                      data-item-price={value.price}
-                                     data-item-url='https://stripe-snipcart-syedsabtain.netlify.app/'
+                                     data-item-url='https://stripe-snipcart-syedsabtain.netlify.app/Snipcart/'
                                      data-item-description={value.description}
                                      data-item-image={value.image}
                                      data-item-name={value.name}>
