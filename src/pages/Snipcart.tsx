@@ -8,12 +8,14 @@ export default()=>{
         name:'IPHONE11',
         image:'/iphone11.jpg',
         description:'NEW BRAND NEW IPHONE 11 PRO',
+        id:39,
         price:1000,
     },
     {
         name:'Bowl',
         image:'/image1.jpg',
         description:'New Design Bowl',
+        id:40,
         price:100,
     },
    
@@ -120,18 +122,18 @@ export default()=>{
                                 <div className="d-flex justify-content-between align-items-center">
                                     <div className="btn-group">
                                     <button className="snipcart-add-item btn btn-sm btn-outline-danger"
-                data-item-id={value.image}
-                data-item-price={value.price}
-                data-item-url="/"
-                data-item-description={value.description}
-                data-item-image={value.image}
-                data-item-name={value.name}>
-                Add to cart
-                </button>
+                                     data-item-id={value.id}
+                                     data-item-price={value.price}
+                                     data-item-url="https://stripe-snipcart-syedsabtain.netlify.app/Snipcart"
+                                     data-item-description={value.description}
+                                     data-item-image={value.image}
+                                     data-item-name={value.name}>
+                                    Add to cart
+                                    </button>
 
-                                        
-                                        
-                                    </div>
+
+
+                                                   </div>
 
                                 </div>
                             </div>
