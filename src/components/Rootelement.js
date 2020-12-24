@@ -13,8 +13,8 @@ export const  wrapRootElement =({element})=>{
         <CartProvider
         mode="client-only"
         stripe={stripePromise}
-        successUrl="http://localhost:8888/Stripe"
-        cancelUrl="http://localhost:8888/Snipcart"
+        successUrl="https://stripe-snipcart-syedsabtain.netlify.app/Snipcart"
+        cancelUrl="https://stripe-snipcart-syedsabtain.netlify.app/Stripe"
         currency="USD"
         allowedCountries={['US', 'GB', 'CA']}
         billingAddressCollection={true}
