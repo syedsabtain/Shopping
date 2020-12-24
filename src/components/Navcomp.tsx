@@ -17,6 +17,9 @@ const Navcomp =()=>{
   <li className="nav-item">
     <Link className="nav-link" to='/Shopify'>Shopify</Link>
   </li>
+  <li className="nav-item">
+    <Link className="nav-link" to='/ShopifyGraphlql'>Shopify Using Graphql</Link>
+  </li>
 
 </ul>
 
