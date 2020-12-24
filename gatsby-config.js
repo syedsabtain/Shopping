@@ -9,6 +9,15 @@ module.exports = {
         options: {
           apiKey: process.env.SNIPCART_KEY
         }
+      },
+      {
+        resolve: `gatsby-source-shopify`,
+        options: {
+          // The domain name of your Shopify shop.
+          shopName: process.env.SHOPIFY_NAME,
+          // The storefront access token
+          accessToken: process.env.SHOPIFY_ACCESSTOKEN,
+        },
       }
     ]
   

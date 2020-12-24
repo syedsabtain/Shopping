@@ -12,7 +12,10 @@ const Navcomp =()=>{
     <Link className="nav-link" to='/Snipcart'>SnipCart</Link>
   </li>
   <li className="nav-item">
-    <a className="nav-link" href="#">Link</a>
+    <Link className="nav-link" to='/OpenSource'>OpenSource</Link>
+  </li>
+  <li className="nav-item">
+    <Link className="nav-link" to='/Shopify'>Shopify</Link>
   </li>
 
 </ul>
