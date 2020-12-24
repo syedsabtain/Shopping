@@ -34,12 +34,12 @@ export default()=>{
                 <p>Number of Items: {cartCount}</p>
       <p>Total: {totalPrice}</p>
       
-      {/* Redirects the user to Stripe */}
+      
       <button className='btn btn-outline-dark' onClick={()=>{clearCart()}}>ClearCart</button>
       <button onClick={()=>{redirectToCheckout()}} className='btn btn-outline-info'>Checkout</button>
                 <div className='row d-flex justify-content-center text-center'>
                 
-      {/* Renders the products */}
+      
         {productData.map((value,key)=>{
             return(
                 <div className="col-md-4" key={key}>
