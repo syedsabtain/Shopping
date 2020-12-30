@@ -46,10 +46,10 @@ const relement = (id) => {
   return(
     <Maintemp>
       <div className='container mt-5 p-5 '>
-          <h1>Heading</h1>
+          
       <div className='col-md-12'>
       {/* <i className="fas fa-shopping-cart  fa-4x " /> */}
-      <Link type="button" className="btn btn-outline-danger btn-lg " to='/Cart'>
+      <Link type="button" className="btn btn-outline-danger  " to='/Cart'>
      <span className="badge">
      <i className="fas fa-shopping-cart  fa-2x " /> {data.Reduxer.length}</span>
         {/* <span className="visually-hidden">unread messages</span> */}
@@ -73,9 +73,9 @@ const relement = (id) => {
                             <div className="col-md-4" key={key}>
 
                                 <div className="card mb-4 shadow-lg cardbody">
-                                    <a onClick={()=>{navigate(`/MainProducts/${name.replace(/\s/g, '')}`)}} >
+                                    <button className='border-0 imgbtn '  onClick={()=>{navigate(`/MainProducts/${name.replace(/\s/g, '')}`)}} >
                                         <img src={img} alt="" className='card-img-top cardimage'/>
-                                    </a>
+                                    </button>
                                     <div className="card-body cardbody">
                                         <p className="card-text cardtextp d-flex justify-content-between">
                                             {name}

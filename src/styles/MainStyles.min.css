@@ -11,3 +11,7 @@
   .cardimage{
     height: 250px;
   }
+  .imgbtn{
+    border-width: 0px !important;
+    border-color: white !important;
+  }

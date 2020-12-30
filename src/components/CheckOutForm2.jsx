@@ -1,9 +1,9 @@
 import React,{useState} from 'react'
 import {useSelector} from 'react-redux'
-
 import {useStripe,useElements,CardElement} from "@stripe/react-stripe-js";
-
 import CardSection from '../components/CardSection'
+import { navigate } from 'gatsby';
+
 
 const Checkout =()=>
 
@@ -94,12 +94,15 @@ const Checkout =()=>
           // Make sure to disable form submission until Stripe.js has loaded.
           return;
         }
-        const totalamount = calculatetotal();
-        const secretkey = await fetch('/.netlify/functions/Payment')
-        // console.log(secretkey)
-        const res =    await  secretkey.json();
         
-        const result = await stripe.confirmCardPayment(res.CLIENT_SECRET, {
+        const secretkey = await fetch('/.netlify/functions/Payment',{
+          method:'POST',
+          body:JSON.stringify({data:parseInt(calculatetotal())})
+        })
+        console.log(parseInt(calculatetotal()),'total')
+        const res = await secretkey.json();
+        console.log(res,'resssss')
+        const result = await stripe.confirmCardPayment(res.CLIENT_SECRET,{
           payment_method: {
             card: elements.getElement(CardElement),
             billing_details: {
@@ -111,6 +114,8 @@ const Checkout =()=>
             },
           }
         });
+
+        
     
         if (result.error) {
           // Show error to your customer (e.g., insufficient funds)
@@ -119,6 +124,7 @@ const Checkout =()=>
           // The payment has been processed!
           if (result?.paymentIntent.status === 'succeeded') {
             alert('payment succedded')
+            navigate('/')
           }
         }
       };
@@ -161,7 +167,7 @@ const Checkout =()=>
           </div>
           <div className="col-md-8 order-md-1" >
             <h4 className="mb-3">Billing address</h4>
-            <form className="needs-validation"  onSubmit={handleSubmit}>
+            <form className=""  onSubmit={handleSubmit}>
               <div className="row">
                 <div className="col-md-6 mb-3">
                   <label htmlFor="firstName">First name</label>
@@ -220,14 +226,6 @@ const Checkout =()=>
               <button disabled={!stripe} className='btn btn-outline-info mt-2' type='submit'>Confirm order</button>
             </form>
           </div>
-        </div>
-         
-        <div>
-          <h2>{details.firtname}</h2>
-          <h2>{details.lastName}</h2>
-          <h2>{details.address}</h2>
-          <h2>{details.phone}</h2>
-          <h2>{details.email}</h2>
         </div>
       </div>
         

@@ -1,4 +1,4 @@
-import React,{useEffect} from 'react'
+import React  from 'react'
 import {Router} from '@reach/router'
 import Viewimage from '../components/comp/Viewimage'
 import mugstore from '../components/Store/MugStore'

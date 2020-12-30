@@ -78,7 +78,7 @@ break;
       return;
     }
     const secretkey = await fetch('/.netlify/functions/Payment');
-    // console.log(secretkey)
+    console.log(secretkey,'secretkey')
     const res =    await  secretkey.json();
     
     const result = await stripe.confirmCardPayment(res.CLIENT_SECRET, {

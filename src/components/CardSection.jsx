@@ -1,6 +1,6 @@
 
 import React from 'react';
-import {CardElement,useStripe} from '@stripe/react-stripe-js';
+import {CardElement} from '@stripe/react-stripe-js';
 import '../styles/CardSectionStyles.css'
 
 const CARD_ELEMENT_OPTIONS = {
@@ -22,7 +22,7 @@ const CARD_ELEMENT_OPTIONS = {
 };
 
 function CardSection() {
-  const stripe = useStripe();
+  
   return (
     <div className='mt-3'>
       Card details
