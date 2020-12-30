@@ -24,3 +24,8 @@
   .StripeElement--webkit-autofill {
     background-color: #fefde5 !important;
   }
+  .cartimage{
+    height: 80px!important;
+    width: 80px!important;
+    
+}

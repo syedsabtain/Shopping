@@ -88,7 +88,8 @@ break;
           name: details.firtname.concat(" "+details.lastName),
           address: details.address,
           phone:details.phone,
-          email:details.email
+          email:details.email,
+          
           
         },
       }
@@ -148,17 +149,7 @@ break;
   
   <div className="col-12">
   <CardSection />
-  <div className="col-12 mt-3">
-    <div className="form-check">
-      <input className="form-check-input" type="checkbox" defaultValue id="invalidCheck" required />
-      <label className="form-check-label" htmlFor="invalidCheck">
-        Agree to terms and conditions
-      </label>
-      <div className="invalid-feedback">
-        You must agree before submitting.
-      </div>
-    </div>
-  </div>
+  
       <br/>
       <button disabled={!stripe} className='btn btn-outline-info mt-2' type='submit'>Confirm order</button>
   </div>

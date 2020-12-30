@@ -1,4 +1,14 @@
 const path = require('path')
+
+exports.onCreatePage = async ({page,actions})=>{
+
+  const {createPage} = actions
+
+  if(page.path.match(/^\/MainProducts/)){
+      page.matchPath = "/MainProducts/*"
+      createPage(page)
+  }
+}
 exports.createPages = async({graphql,actions})=>{
 
     const{createPage} = actions

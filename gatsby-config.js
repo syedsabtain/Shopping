@@ -3,6 +3,7 @@ require('dotenv').config({
 })
 module.exports = {
   plugins: ["gatsby-plugin-typescript"],
+  plugins: [`gatsby-plugin-react-helmet`],
   plugins: [
       {
         resolve: 'gatsby-plugin-snipcartv3',
@@ -18,7 +19,19 @@ module.exports = {
           // The storefront access token
           accessToken: process.env.SHOPIFY_ACCESSTOKEN,
         },
-      }
+      },
+      {
+        resolve: `gatsby-plugin-manifest`,
+        options: {
+          name: `GatsbyJS`,
+          short_name: `GatsbyJS`,
+          start_url: `/`,
+          background_color: `#f7f0eb`,
+          theme_color: `#a2466c`,
+          display: `standalone`,
+          icon: `src/images/favico.png`,
+        },
+      },
     ]
   
 };
